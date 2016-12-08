@@ -217,6 +217,14 @@ function StrCut(text,cnt){
   return text.substr(0,cnt);
 }
 
+function ContentFormat(msg){
+  //URLをAタグに変換
+  msg = msg.replace(/((http|https|ftp):\/\/[\w?=&.\/-;#~%-]+(?![\w\s?&.\/;#~%"=-]*>))/g, '<a href="$1">$1</a> ');
+  //改行の変換
+  msg = brReplace(msg);
+  return msg;
+}
+
 //改行文字を改行タグに変換
 function brReplace(msg) {
     return msg.replace(/\n/g, '<br>');

@@ -179,7 +179,7 @@ function bbsDetailDom(msg,id){
   $("#bbs-detail-name").html(msg.username);
   $("#bbs-detail-name").attr("onclick","ShowProfile("+msg.user_id+")");
   $("#bbs-detail-date").html(formatDateTime(new Date(msg.time)));
-  $("#bbs-detail-content").html(brReplace(msg.content));
+  $("#bbs-detail-content").html(ContentFormat(msg.content));
   $("#bbs-detail-reply").attr("onclick","bbsReply("+id+")")
   $(".bbs-list-update").attr("onclick","bbsCmtUpdate("+id+")");
   $("#cmtCount").html(msg.cmtcount[0][0]);
@@ -190,7 +190,7 @@ function bbsDetailDom(msg,id){
     listDom.css("display","flex");
     //listDom.attr("hidden","false");
     //listDom.find(".image").html(val.image);
-    listDom.find(".bbs-cmt-cmt").html(brReplace(val.comment));
+    listDom.find(".bbs-cmt-cmt").html(ContentFormat(val.comment));
     listDom.find(".bbs-cmt-name").html(val.fullname);
     listDom.find(".bbs-cmt-date").html(formatDateTime(new Date(val.time)));
     //var cloneDom = listDom.clone(true);

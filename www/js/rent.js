@@ -157,7 +157,7 @@ function rentDetail(id){
           //detailImage.src = url;
           $("#rent-detail-var").html(msg.title);
           $("#rent-detail-title").html(msg.title);
-          $("#rent-detail-content").html(brReplace(msg.content));
+          $("#rent-detail-content").html(ContentFormat(msg.content));
           $("#rent-detail-date").html(formatDateTime(new Date(msg.time)));
           $("#rent-detail-name").html(msg.name);
           $("#rent-detail-name").attr("onclick","ShowProfile("+msg.user_id+")");
