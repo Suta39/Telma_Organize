@@ -1,0 +1,28 @@
+
+<ons-page>
+  <ons-toolbar>
+    <div class="left">
+      <ons-back-button></ons-back-button>
+    </div>
+    <div class="center">
+      借りたいものを申請する
+    </div>
+  </ons-toolbar>
+  <div align="right">
+    <div style="padding: 15px 25px 5px 25px;">
+    <input id="rent-title" type="text" class="title-form text-input" ng-model="text" placeholder="タイトル">
+    </div>
+  <div style="padding: 15px 25px 5px 25px;">
+    <textarea id="rent-content" class="txt textarea" placeholder="内容" rows="8" cols="30" style="background-color:#FFF"></textarea>
+  </div>
+  <div id="readform" style="margin:3px 0;text-align: center;display:none">image.png</div>
+  <div style="padding: 8px 30px 0px 15px;">
+    <label for="image" style="width:70px;float:left">
+      <ons-button>
+        <ons-icon icon="ion-images" size="2x"></ons-icon>
+      </ons-button>
+      <input type="file" id="image" style="display:none;" onchange="FileStatus()" onload="FileStatus()">
+    </label>
+    <ons-button id="sendBtn" modifier="large" style="width:auto;padding:0 40px" onclick="rentWrite()">記事を投稿</ons-button>
+  </div>
+</ons-page>

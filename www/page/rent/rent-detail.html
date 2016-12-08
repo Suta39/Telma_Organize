@@ -1,0 +1,28 @@
+<ons-page>
+  <ons-toolbar>
+    <div class="left">
+      <ons-back-button></ons-back-button>
+    </div>
+    <div id="rent-detail-var" class="center">
+    </div>
+  </ons-toolbar>
+  <div style="font-size:14px" class="col" id="rent-content-content">
+    <h4 id="rent-detail-title"></h4>
+    <p align="right" style="font-size:10px">
+      投稿者：<span style="margin-right:10px;" id="rent-detail-name">名無しさん</span>
+      投稿日：<span id="rent-detail-date">2016年7月19日 12時27分</span>
+    </p>
+    <hr style="border-top: 4px double #10c98d;width: 100%;"></hr>
+    <img id="image" src="" style="width:auto;height:200px;margin-bottom:7px;display:none" alt="image"><br>
+    <p id="rent-detail-content">
+    </p>
+  </div>
+  <section style="padding" 5px 8px>
+    <section style="padding-top:10px" align="center">
+      <ons-button id="rent-reply" style="width:80%" onclick="RentReply()">
+        <ons-icon size="20px" icon="md-email"></ons-icon>
+        <span style="margin-left:10px">投稿者にメッセージを送る</span>
+      </ons-button>
+    </section>
+  </section>
+</ons-page>

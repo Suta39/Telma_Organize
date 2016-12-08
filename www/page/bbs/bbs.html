@@ -1,0 +1,30 @@
+<ons-page>
+  <ons-list id="bbs-lists" style="height:100%;overflow-y:scroll;">
+    <ons-list-item id="bbs-list" class="bbs-list bbs-list-seed" style="display:none">
+      <span class="keijiban_id" id="0" hidden></span>
+      <div class="left"><ons-icon class="list__item__thumbnail" icon="ion-clipboard" size="2x"></ons-icon></div>
+      <div class="center">
+        <span class="list__item__title" onclick="bbsDetail()">Cutest kitty</span>
+        <span class="list__item__subtitle">
+        投稿者：<span class="bbs-list-name" style="margin-right:5px" onclick="ShowProfile()">名無しさん</span>
+        <span class="bbs-list-date">07月25日7時14分</span>
+        </span>
+      </div>
+    </ons-list-item>
+  </ons-list>
+  
+  <ons-speed-dial position="bottom right" direction="left">
+    <ons-fab> 
+      <ons-icon icon="md-plus"></ons-icon>
+    </ons-fab>
+    <ons-speed-dial-item class="wirte-ic" onclick="popOpen('page/bbs/bbs-write.html')">
+      <ons-icon icon="ion-edit" ></ons-icon>
+    </ons-speed-dial-item>
+    <ons-speed-dial-item class="book-ic"  onclick="locationSelect()">
+      <ons-icon icon="ion-ios-bookmarks"></ons-icon>
+    </ons-speed-dial-item>
+    <ons-speed-dial-item class="location-ic" onclick="openDialog('location-regi')">
+      <ons-icon icon="ion-android-pin"></ons-icon>
+    </ons-speed-dial-item>
+  </ons-speed-dial>
+</ons-page>

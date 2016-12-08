@@ -1,0 +1,208 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="Content-Security-Policy" content="default-src * data:; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+  
+  <script src="lib/jquery/jquery-2.1.4.min.js"></script>
+  <script src="lib/onsenui/js/onsenui.min.js"></script>
+  <script src="components/loader.js"></script>
+  <!--追加--->
+  <script src="lib/bootstrap/bootstrap.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.concat.min.js'></script>
+  <script src="js/bbs.js"></script>
+  <script src="js/rent.js"></script>
+  <script src="js/login.js"></script>
+  <script src="js/alert.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/chat.js"></script>
+  <!-------->
+  
+  
+  <link rel="stylesheet" href="components/loader.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!--追加--->
+  <link rel="stylesheet" href="lib/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="lib/bootstrap/aaa.css">
+  <!--------->
+  <!-- Tuyen san ----->
+  <link rel="stylesheet" href="css/font-awesome.css">
+  <link rel="stylesheet" href="css/style-chat.css">
+  <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+  <!------------------>
+  <script>
+    ons.ready(function () {
+      document.getElementById('myNavigator').pushPage('page/login/login.html');
+    });
+  </script>
+  <style>
+  .col  {border: 1px solid #ccc;background-color: #fff;overflow: hidden;padding: 10px;color: #000;font-size:17px;margin: 10px 8px 8px 8px;}
+  </style>
+</head>
+<body>
+  <ons-navigator id="myNavigator">
+  </ons-navigator>
+  
+  <ons-template id="splitter.html">
+    <ons-splitter id="mySplitter">
+      <ons-splitter-side id="menu" side="left" collapse swipeable>
+        <ons-page>
+          <ons-list>
+            <ons-list-item onclick="openSlide('page/home.html')" tappable>
+            </ons-list-item>
+            <ons-list-item onclick="openSlide('page/home.html')" tappable>
+              ホーム画面
+            </ons-list-item>
+            <ons-list-item onclick="openUserEdit()" tappable>
+              アカウント情報編集
+            </ons-list-item><!--
+            <ons-list-item onclick="myNavigator.pushPage('chatselect.html', { animation : 'slide' } )" tappable>
+              チャット
+            </ons-list-item>-->
+            <ons-list-item onclick="openDialog('logout-review')" tappable>
+              <ons-icon icon="ion-power"><span style="margin-left:10px">ログアウト</span>
+            </ons-list-item>
+          </ons-list>
+        </ons-page>
+      </ons-splitter-side>
+      <ons-splitter-content id="content" page="page/home.html"></ons-splitter-content>
+    </ons-splitter>
+  </ons-template>
+  
+  <ons-template id="rent.html">
+  </ons-template>
+
+<!-- Location ------------------>
+<ons-dialog id="location-select.html" modifier="android">
+  <div style="text-align: center; padding: 20px 10px 10px 10px;background-color:#FFF">
+    <div id="location-edit">
+      <label for="location-toggle">
+        <ons-button id="edit-btn" style="width:90px;border:1px solid #999;">編集</ons-button>
+        <input id="location-toggle" type="checkbox" style="display:none" onchange="locationEdit()">
+      </label>
+    </div>
+    <ons-list id="location-seed">
+      <ons-list-item id="seed" class="location-list" style="display:none">
+        <span class="location_key"></span>
+        <label class="center">
+          <ons-input class="edit-name name" modifier="underbar" style="display:none" placeholder="" value="友人"></ons-input>
+          <div class="check-name name">友人</div>
+        </label>
+        <label class="right">
+          <button type="button" class="btn btn-danger del-btn" style="display:none;padding:3px 10px;margin-bottom:8px" disabled="disabled"><ons-icon size="23px" icon="ion-ios-trash"></ons-icon></button>
+          <ons-input type="checkbox" class="check" style="display:flex" disabled="true"></ons-input>
+        </label>
+      </ons-list-item>
+    </ons-list>
+    <ons-list id="location-lists">
+    </ons-list>
+    <ons-button onclick="locationEditAll()">閉じる</ons-button>
+    <!--<ons-button onclick="locationEditAll(region)">決定</ons-button>-->
+  </div>
+</ons-dialog>
+
+<!-- Location ------------------>
+<ons-dialog id="location-regi">
+  <div style="text-align: center; padding: 30px;background-color:#FFF">
+    <p>
+      現在位置を登録しますか？
+    </p>
+    <div><ons-input style="width:200px" class="place" modifier="underbar" placeholder="場所名" float></ons-input></div>
+    <ons-button onclick="closeDialog('location-regi')">閉じる</ons-button>
+    <ons-button onclick="locationRegi()">登録</ons-button>
+  </div>
+</ons-dialog>
+
+<ons-dialog id="dialog-2.html" cancelable>
+  <div class="alert-dialog-footer">
+    <ons-list-item tappable onclick="getPhoto2 ()" >写真を撮影する</ons-list-item>
+    <ons-list-item tappable onclick="getPhoto ()" >アルバムから選択する</ons-list-item> 
+  </div>
+</ons-dialog>
+
+
+<!-- 貸し借りのひとこと ------------------>
+<ons-dialog id="reply-msg">
+  <div style="text-align: center; padding: 10px;background-color:#FFF">
+    <p>相手に一言送信します</p>
+    <section style="padding: 10px 10px">
+      <textarea id="replymsg" class="textarea" placeholder="ひとこと"></textarea>
+    </section>
+    <ons-button onclick="closeDialog('reply-msg')">閉じる</ons-button>
+    <ons-button id="reply-btn" onclick="rentReply()">決定</ons-button>
+  </div>
+</ons-dialog>
+
+<!-- Profile ------------------>
+<ons-dialog id="profile-dialog" style="">
+  <div style="text-align: center; padding:0px 10px 0 12px;height:140px;border:solid 3px #6b9f5f">
+    <div style="float:left;width:100px;margin-top:25px">
+      <img id="image1" src="" style="width:auto;height:100px;width:100px;display:" alt="image">
+    </div>
+    <div style="float:left;width:auto">
+      <div style="margin:4px -8px 6px 0;text-align:right;font-size:25px;"><ons-icon icon="times-circle-o" onclick="closeDialog('profile-dialog')"></ons-icon></div>
+      <span id="username">どん兵衛</span>
+      <div style="display:table;margin:20px 0 0 6px;padding:5px 0 5px 0;border:solid 0.1px #74b367">
+        <span style="display:table-cell;padding:0 5px;">
+          良い<br>
+          <span id="rateGood">2</span>
+        </span>
+        <span style="display:table-cell;padding:0 5px;">
+          普通<br>
+          <span id="rateGood">1</span>
+        </span>
+        <span style="display:table-cell;padding:0 5px;">
+          悪い<br>
+          <span id="rateBad">0</span>
+        </span>
+      </div>
+    </div>
+  </div>
+</ons-dialog>
+
+<!-- 評価送信 ------------------>
+<ons-dialog id="user-rate.html">
+  <div style="text-align: center; padding: 10px;background-color:#FFF">
+    <p>取引相手を評価します</p>
+    <section style="padding: 10px 10px">
+      <select class="form-control">
+        <option value="0" selected>選択して下さい</option>
+        <option value="0">普通</option>
+        <option value="1">良い</option>
+        <option value="-1">悪い</option>
+      </select>
+    </section>
+    <ons-button onclick="closeDialog('user-rate.html')">閉じる</ons-button>
+    <ons-button id="reply-btn" onclick="UserRate()">決定</ons-button>
+  </div>
+</ons-dialog>
+
+<ons-template id="chatselect.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-back-button>Back</ons-back-button>
+      </div>
+      <div class="center">チャットを選択</div>
+    </ons-toolbar>
+  </ons-page>
+</ons-template>
+
+<ons-alert-dialog id="logout-review">
+  <div class="alert-dialog-title">ログアウト</div>
+  <div class="alert-dialog-content">
+    <p>本当にログアウトしても</p>
+    <p>よろしいですか？</p>
+  </div>
+  <div class="alert-dialog-footer">
+    <button class="alert-dialog-button" onclick="closeDialog('logout-review')">キャンセル</button>
+    <button class="alert-dialog-button" onclick="logout()">ログアウト</button>
+  </div>
+</ons-alert-dialog>
+
+</body>
+</html>

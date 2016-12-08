@@ -1,0 +1,130 @@
+<ons-page>
+  <ons-toolbar id="useredit">
+    <style>
+    .page__background{
+      height: 100%;
+      background-repeat: no-repeat;
+      background-image: none;
+    }
+    </style>
+    <div class="center">
+      プロフィールを編集
+    </div>
+    <div class="right">
+    　　<ons-toolbar-button onclick="userback()">保存</ons-toolbar-button>    
+    </div>
+  </ons-toolbar>
+   <ons-list modifier="material"></br>
+      <img onclick="showDialog('dialog-2.html')" id="image" src="image/telma.jpg" class="img-responsive profile-img-card" 
+      style=" width: 96px;height: 96px;margin: 0 auto 10px;display: 
+      block;-moz-border-radius: 50%;-webkit-border-radius: 50%;border-radius: 50%;">
+      <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label" >名前</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="username" placeholder="名前">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label">メールアドレス</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="email" placeholder="email">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label">連携アプリ</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="twitter_id" placeholder="Twitter ID">
+       <input type="text" class="form-control" id="facebook_id" placeholder="facebook ID">
+        <input type="text" class="form-control" id="google_id" placeholder="google+ ID">
+    </div>
+  </div>
+  <label for="inputPassword3" class="col-sm-2 control-label">表示範囲</label>
+      <ons-row style="padding:0 5px">
+        <ons-col width="40px" style="text-align: center; line-height: 31px;">
+          <ons-icon icon="md-directions-run" size="2x"></ons-icon>
+        </ons-col>
+        <ons-col>
+          <ons-range style="width: 100%;" min="1000" max="2000" step="100"></ons-range>
+        </ons-col>
+        <ons-col width="40px" style="text-align: center; line-height: 31px;">
+          <ons-icon icon="md-directions-bike" size="2x"></ons-icon>
+      </ons-col>
+      </ons-row>
+      <ons-list-header></ons-list-header>
+      <div style="border-top:solid;border-bottom:solid;border-color:#CCC;">
+    <ons-list-item modifier="chevron" tappable onclick="myNavigator.pushPage('page6.html', { animation : 'slide' } )">通知</ons-list-item>
+    </ons-list>
+</div>
+  
+</ons-page>
+
+
+
+<!--<ons-template id="page4.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-back-button>Back</ons-back-button>
+      </div>
+      <div class="center">名前</div>
+    </ons-toolbar>
+     </br>
+         <input type="text" class="form-control">
+            <div style="text-align: center">
+    　　    </br>
+                <button type="button" class="btn btn-success">保存</button>
+            </div>
+  </ons-page>
+</ons-template>
+<ons-template id="page5.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-back-button>Back</ons-back-button>
+      </div>
+      <div class="center">メールアドレス</div>
+    </ons-toolbar>
+     </br>
+         <input type="text" class="form-control">
+            <div style="text-align: center">
+    　　    </br>
+                <button type="button" class="btn btn-success">保存</button>
+            </div>
+  </ons-page>
+</ons-template>-->
+
+<ons-template id="page6.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-back-button>Back</ons-back-button>
+      </div>
+      <div class="center">通知</div>
+    </ons-toolbar>
+     </br>
+        <ons-list-item>
+            <div class="center">掲示板コメント</div>
+            <div class="right"><ons-switch checked></ons-switch></div>
+          </ons-list-item>
+           <ons-list-item>
+            <div class="center">貸し借り返信</div>
+            <div class="right"><ons-switch checked></ons-switch></div>
+          </ons-list-item>
+           <ons-list-item>
+            <div class="center">新規貸し借り</div>
+            <div class="right"><ons-switch checked></ons-switch></div>
+          </ons-list-item>
+           <ons-list-item>
+            <div class="center">新規掲示板</div>
+            <div class="right"><ons-switch checked></ons-switch></div>
+          </ons-list-item>
+      <!--   <input type="text" class="form-control" placeholder="Twitter ID"></br>
+         <input type="text" class="form-control" placeholder="facebook ID"></br>
+         <input type="text" class="form-control" placeholder="google+ ID">
+         -->
+            <div style="text-align: center">
+    　　    </br>
+                <button type="button" class="btn btn-success"　>保存</button>
+            </div>
+  </ons-page>
+</ons-template>

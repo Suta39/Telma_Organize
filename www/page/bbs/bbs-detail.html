@@ -1,0 +1,50 @@
+
+<ons-page>
+  <ons-toolbar>
+    <div class="left">
+      <ons-back-button></ons-back-button>
+    </div>
+    <div class="center" id="bbs-detail-var">
+      <!--熱田まつり開催！-->
+    </div>
+    <div class="right">
+      <ons-toolbar-button id="refresh-icon">
+        <ons-icon icon="ion-android-sync" class="bbs-list-update" onclick="bbsDetailDom()"></ons-icon>
+      </ons-toolbar-button>
+    </div>
+  </ons-toolbar>
+    <div style="font-size:14px" class="col" id="bbs-content-content">
+    <h4 id="bbs-detail-title"><!--第70回海の日名古屋みなと祭花火大会--></h4>
+    <p align="right" style="font-size:10px">
+      投稿者：<span style="margin-right:10px;" id="bbs-detail-name">名無しさん</span>
+      投稿日：<span id="bbs-detail-date">0000年0月00日 00時00分</span>
+    </p>
+    <hr style="border-top: 4px double #10c98d;width: 100%;"></hr> <!--タイトルと本文の仕切り線-->
+    <img id="image" src="" style="width:auto;height:200px;margin-bottom:7px;display:none" alt="image">
+    <p id="bbs-detail-content"></p>
+      <div style="margin:0px;padding:8px 10px 8px 10px;font-size:12px" align="left">
+      みんなのコメント(<span id="cmtCount"></span><!--カッコ内に総コメント数を取得-->)
+      </div>
+      <div style="font-size:14px;padding:3px 5px 0 18px" id="bbs-cmt-lists"> <!--ここからコメント欄-->
+      <!-- <div id="bbs-cmt-lists"> -->
+        <ons-row id="seed" style="margin:10px 2px 0 0;display:none" class="row bbs-cmt-list">
+          <div valign="top" style="padding:0px 0px 5px 10px;margin:0px;width:50px;height:50px;border-radius:10px" class="col bbs-cmt-image">
+            <ons-icon class="list__item__thumbnail" icon="ion-person" size="2x"></ons-icon>
+          </div>
+          <div style="margin:0 0 0 3px ;padding:7px 5px 0px 10px;font-size:12px;width:80%;border-radius:8px" class="col">
+            <p class="bbs-cmt-cmt" style="margin-bottom: 5px"></p>
+            <!--<div id="aaaf">-->
+            <p style="font-size:10px;text-align:right;margin:0">
+              投稿者：<span class="bbs-cmt-name" style="margin-right:10px">名無しさん</span>
+              <span valign="bottom" class="bbs-cmt-date">00月00時</span>に返信
+            </p>
+            <!--</div>-->
+          </div>
+        </ons-row>
+      </div>
+    </div>
+  </div>
+  <ons-fab position="bottom right" id="bbs-detail-reply">
+    <ons-icon icon="ion-reply"></ons-icon>
+  </ons-fab>
+</ons-page>

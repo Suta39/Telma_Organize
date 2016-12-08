@@ -1,0 +1,43 @@
+<ons-page id="chat">
+  <ons-toolbar>
+		<div class="left">
+			<ons-back-button>Back</ons-back-button>
+		</div>
+    <div class="right" style="padding-right:10px">
+      <input type="button" style="color:#000" class="btn" onclick="openUserRate()" value="評価する">
+    </div>
+	</ons-toolbar>
+	<div class="chat">
+		<div class="chat-title">
+			<h1 id="userName">太郎</h1>
+			<h2><i class="fa fa-circle fa-lg fa-circle-online" aria-hidden="true"></i> online</h2>
+			<figure class="avatar">
+				<img class="avatarImage" src="http://flat-icon-design.com/f/f_object_88/s256_f_object_88_0bg.png" />
+			</figure>
+		</div>
+		<div class="messages">
+			<div class="messages-content mCustomScrollbar _mCS_1 mCS_no_scrollbar">
+				<div id="mCSB_1" class="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside" style="max-height: none;" tabindex="0">
+					<div id="mCSB_1_container" class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y" style="position:relative; top:0; left:0;"
+						dir="ltr"></div>
+				  <div id="mCSB_1_scrollbar_vertical" class="mCSB_scrollTools mCSB_1_scrollbar mCS-light mCSB_scrollTools_vertical" style="display: none;">
+  				  <div class="mCSB_draggerContainer">
+  						<div id="mCSB_1_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 30px; top: 0px; height: 0px;"
+  							oncontextmenu="return false;">
+  							<div class="mCSB_dragger_bar" style="line-height: 30px;"></div>
+  						</div>
+  						<div class="mCSB_draggerRail"></div>
+  					</div>
+  				</div>
+        </div>
+      <div class="block-content"></div>
+		</div>
+		<div id="scrollBottom"></div>
+	</div>
+  	<div class="message-box">
+  		<textarea type="text" class="message-input" placeholder="Type message..."></textarea>
+  		<button type="submit" class="message-submit">Send</button>
+  	</div>
+	</div>
+  <div class="bg"></div>
+</ons-page>

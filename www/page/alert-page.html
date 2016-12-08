@@ -1,0 +1,64 @@
+<ons-page>
+<style>
+.alert-list div{
+  padding:5px 0px;
+}
+.container{
+  width: 450px;
+  margin: 0 auto;
+}
+.block{
+  display: table;
+  margin: 20px 0;
+}
+.block__row{
+  display: table;
+}
+.block__cell{
+  display: table-cell;
+}
+.alert-list     {width:100%;border-top:1px #ddd solid;border-bottom:1px #ddd solid;display:table-row;float:left;}
+.alert-title {font-size:15px}
+.alert-subtitle {font-size:12px}
+/*
+button{
+  padding:3px 10px;
+}
+*/
+</style>
+  <ons-toolbar id="toolbar">
+    <div class="left">
+      <ons-back-button></ons-back-button>
+    </div>
+    <div class="center">
+      通知一覧
+    </div>
+  </ons-toolbar>
+  <select class="form-control">
+    <option>全ての通知を表示</option>
+    <option>貸し借りの通知のみ表示</option>
+    <option>掲示板の通知のみ表示</option>
+  </select>
+  <div id="alert-lists" style="display:table;border-collapse:collapse">
+    <div id="list-seed" style="display:none" class="alert-list">
+      <span class="keijiban_id" id="0" hidden></span>
+      <div style="float:left;width:15%;padding:15px 0 15px 15px;">
+        <ons-icon class="alert-icon" icon="" size="2x"></ons-icon>
+      </div>
+      <div style="float:left;width:85%;padding: 10px 0 5px 2px;">
+        <div style="float:left">
+          <span class="alert-title" style="font-size:14px;float:left">種</span><br>
+          <span class="alert-subtitle" style="float:left">
+            <span class="subtitle"></span>
+            <span class="alert-list-date">07月25日7時14分</span>
+          </span>
+        </div>
+        <div style="margin:7px 10px 0px 0px;float:right">
+          <button type="button" class="btn agreeBtn btn-secondary" onclick="agreeBtn(0)" style="display:none">
+            未承認
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ons-page>
